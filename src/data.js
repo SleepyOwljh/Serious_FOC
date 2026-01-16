@@ -1,4 +1,6 @@
-import { Music, Zap, Heart, Star, Disc, Mic2, Guitar, Radio } from 'lucide-react';
+import { Music, Zap, Star, Disc } from 'lucide-react';
+
+import groupPhotoPlaceholder from './assets/images/group_photo/placeholder.svg';
 
 export const houses = [
   {
@@ -8,6 +10,8 @@ export const houses = [
     icon: Disc,
     color: 'text-neonBlue',
     borderColor: 'border-neonBlue',
+    bgColor: 'bg-neonBlue/10',
+    hoverBorder: 'hover:border-neonBlue',
     bgGradient: 'from-blue-900/50 to-transparent',
     groups: [
       { name: 'Bass Drops', leader: 'Alex' },
@@ -22,6 +26,8 @@ export const houses = [
     icon: Zap,
     color: 'text-neonPurple',
     borderColor: 'border-neonPurple',
+    bgColor: 'bg-neonPurple/10',
+    hoverBorder: 'hover:border-neonPurple',
     bgGradient: 'from-purple-900/50 to-transparent',
     groups: [
       { name: 'Groove', leader: 'Jessica' },
@@ -36,6 +42,8 @@ export const houses = [
     icon: Star,
     color: 'text-neonPink',
     borderColor: 'border-neonPink',
+    bgColor: 'bg-neonPink/10',
+    hoverBorder: 'hover:border-neonPink',
     bgGradient: 'from-pink-900/50 to-transparent',
     groups: [
       { name: 'Icons', leader: 'Chris' },
@@ -47,9 +55,11 @@ export const houses = [
     id: 'country',
     name: 'Country',
     description: 'Acoustic strings and heartfelt stories. Roots run deep here.',
-    icon: Guitar,
+    icon: Music,
     color: 'text-yellow-400',
     borderColor: 'border-yellow-400',
+    bgColor: 'bg-yellow-400/10',
+    hoverBorder: 'hover:border-yellow-400',
     bgGradient: 'from-yellow-900/50 to-transparent',
     groups: [
       { name: 'Ranch', leader: 'John' },
@@ -90,7 +100,7 @@ export const sponsors = [
 ];
 
 export const galleryImages = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80', alt: 'Event 1' },
+  { id: 1, src: groupPhotoPlaceholder, alt: 'Group Photo 1' },
   { id: 2, src: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80', alt: 'Event 2' },
   { id: 3, src: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&q=80', alt: 'Event 3' },
   { id: 4, src: 'https://images.unsplash.com/photo-1506157788526-7101758e015c?auto=format&fit=crop&q=80', alt: 'Event 4' },

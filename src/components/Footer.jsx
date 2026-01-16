@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="bg-black py-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
-          <h2 className="text-2xl font-bold text-white mb-2">CLUB FOC 2026</h2>
-          <p className="text-gray-500">© 2026 University Orientation Club. All rights reserved.</p>
+          <h2 className="text-2xl font-bold text-white mb-2">MSA FOC 2026</h2>
+          <p className="text-gray-500">©2026 Malaysian Student Association Freshmen Orientation Camp. All rights reserved.</p>
         </div>
         
         <div className="flex gap-6">

@@ -4,9 +4,12 @@ import { galleryImages } from '../data';
 
 const Gallery = () => {
   return (
-    <section id="gallery" className="py-20 bg-darkBg overflow-hidden">
-      <div className="mb-12 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neonPurple to-neonBlue">
+    <section id="gallery" className="py-20 bg-slate-900/90 relative overflow-hidden">
+        {/* Fog Overlay */}
+        <div className="absolute inset-0 bg-fogPurple/20 backdrop-blur-sm pointer-events-none"></div>
+
+      <div className="mb-12 text-center relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-vintagePurple to-white drop-shadow-[0_0_10px_rgba(188,19,254,0.3)]">
           MEMORIES
         </h2>
       </div>

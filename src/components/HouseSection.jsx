@@ -11,7 +11,7 @@ const HouseCard = ({ house, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className={`relative group overflow-hidden rounded-2xl bg-${house.borderColor}/10 border border-white/10 hover:border-${house.borderColor} transition-all duration-300`}
+      className={`relative group overflow-hidden rounded-2xl ${house.bgColor} border border-white/10 ${house.hoverBorder} transition-all duration-300`}
     >
       <div className={`absolute inset-0 bg-gradient-to-br ${house.bgGradient} opacity-20 group-hover:opacity-40 transition-opacity`} />
       
@@ -41,8 +41,11 @@ const HouseCard = ({ house, index }) => {
 
 const HouseSection = () => {
   return (
-    <section id="houses" className="py-24 bg-darkBg relative">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="houses" className="py-24 bg-slate-900 relative overflow-hidden">
+      {/* Fog Overlay */}
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -50,11 +53,11 @@ const HouseSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-neonBlue to-neonPink">
-              MEET OUR HOUSES
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-vintagePurple to-neonPink drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+              MEET OUR FAMILY
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Four distinct vibes, one united club. Find your rhythm and join your tribe.
           </p>
         </motion.div>
