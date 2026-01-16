@@ -32,7 +32,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="MSA FOC Logo" className="h-16 w-auto object-contain" />
           <span className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-neonBlue to-neonPurple">
-            CLUB<span className="text-white">FOC</span>
+            MSA<span className="text-white">FOC</span>
           </span>
         </Link>
 
