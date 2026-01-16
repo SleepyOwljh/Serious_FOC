@@ -9,7 +9,7 @@ import Committee from './components/pages/Committee';
 function App() {
   return (
     <Router>
-      <div className="bg-darkBg text-white min-h-screen font-sans selection:bg-neonPink selection:text-white">
+      <div className="bg-black text-white min-h-screen font-sans selection:bg-neonPink selection:text-white">
         <Navbar />
         <main>
           <Routes>

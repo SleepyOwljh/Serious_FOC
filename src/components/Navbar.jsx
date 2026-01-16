@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo/msafoc2025.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,8 +29,11 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-neonBlue to-neonPurple">
-          CLUB<span className="text-white">FOC</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="MSA FOC Logo" className="h-16 w-auto object-contain" />
+          <span className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-neonBlue to-neonPurple">
+            CLUB<span className="text-white">FOC</span>
+          </span>
         </Link>
 
         {/* Desktop Menu */}
