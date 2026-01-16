@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,11 +13,9 @@ const Navbar = () => {
   });
 
   const links = [
-    { name: 'Home', href: '#' },
-    { name: 'Leaderboard', href: '#leaderboard' },
-    { name: 'Houses', href: '#houses' },
-    { name: 'About', href: '#about' },
-    { name: 'Events', href: '#events' },
+    { name: 'Home', path: '/' },
+    { name: 'Events', path: '/events' },
+    { name: 'Committee', path: '/committee' },
   ];
 
   return (
@@ -29,21 +28,21 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-neonBlue to-neonPurple">
+        <Link to="/" className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-neonBlue to-neonPurple">
           CLUB<span className="text-white">FOC</span>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.path}
               className="text-gray-300 hover:text-white transition-colors relative group text-sm font-medium uppercase tracking-wide"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neonPink transition-all group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -64,14 +63,14 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
         >
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.path}
               className="text-gray-300 hover:text-white block py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </motion.div>
       )}
