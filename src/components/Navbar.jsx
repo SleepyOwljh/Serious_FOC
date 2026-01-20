@@ -21,16 +21,17 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 h-16 flex items-center ${
         isScrolled ? 'bg-darkBg/90 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="MSA FOC Logo" className="h-16 w-auto object-contain" />
+          {/* Removed 'translate-y-2' to restore proper vertical alignment with text */}
+          <img src={logo} alt="MSA FOC Logo" className="h-20 w-auto object-contain" />
           <span className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-neonBlue to-neonPurple">
             MSA<span className="text-white">FOC</span>
           </span>

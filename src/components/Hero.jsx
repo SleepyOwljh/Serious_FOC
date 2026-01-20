@@ -3,33 +3,24 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
-      {/* Background Image with Vintage Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+    // Changed BG to vintageBrown and adjusted gradient
+    <div className="relative h-screen w-full overflow-hidden bg-vintageBrown flex items-center justify-center">
+      
+      {/* Fog Animation - Changed color to warm dust/gold */}
+      <motion.div
+        animate={{
+          x: [0, 100, 0],
+          opacity: [0.3, 0.5, 0.3],
         }}
-      >
-        <div className="absolute inset-0 bg-deepVintage/80 backdrop-blur-[3px] mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deepVintage/50 to-deepVintage"></div>
-      </div>
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+        className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-900/20 via-transparent to-amber-900/20 z-0 filter blur-3xl"
+      />
 
-      {/* Fog Animation Layers */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <motion.div
-           className="absolute -bottom-[20%] -left-[10%] w-[120%] h-[60%] bg-fogPurple/30 blur-[100px] rounded-full mix-blend-screen"
-           animate={{ x: [-50, 50, -50], opacity: [0.3, 0.5, 0.3] }}
-           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-         <motion.div
-           className="absolute top-[20%] -right-[20%] w-[80%] h-[80%] bg-vintagePurple/20 blur-[120px] rounded-full mix-blend-screen"
-           animate={{ x: [50, -50, 50], opacity: [0.2, 0.4, 0.2] }}
-           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')]"></div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <motion.div
@@ -83,7 +74,7 @@ const Hero = () => {
           <div className="w-1 h-3 bg-neonBlue rounded-full"></div>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 

@@ -1,6 +1,10 @@
 import { Music, Zap, Star, Disc } from 'lucide-react';
 
-import groupPhotoPlaceholder from './assets/images/group_photo/placeholder.svg';
+const groupPhotos = import.meta.glob('./assets/images/group_photo/*.{png,jpg,jpeg,svg}', {
+  eager: true,
+  query: '?url',
+  import: 'default'
+});
 
 export const houses = [
   {
@@ -99,9 +103,8 @@ export const sponsors = [
   { name: 'MusicGear', logo: 'https://placehold.co/150x50/1a1a1a/FFF?text=MusicGear' },
 ];
 
-export const galleryImages = [
-  { id: 1, src: groupPhotoPlaceholder, alt: 'Group Photo 1' },
-  { id: 2, src: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80', alt: 'Event 2' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&q=80', alt: 'Event 3' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1506157788526-7101758e015c?auto=format&fit=crop&q=80', alt: 'Event 4' },
-];
+export const galleryImages = Object.values(groupPhotos).map((src, index) => ({
+  id: index + 1,
+  src: src,
+  alt: `Group Photo ${index + 1}`
+}));
